@@ -1,0 +1,39 @@
+<html>
+  <head>
+
+		<title>WELCOME TO MOVIE RECCOMENDATION SYSTEM</title>
+
+  </head>
+
+
+     <style>
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-image: url({{ url_for ('static', filename = 'images/movie.jpg') }});
+  width: 1920px;
+  height: 1080px;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+.myDiv{
+ position: fixed;
+  z-index: 9999;
+   top: 45%;
+  left: 20%;
+}
+
+</style>
+  <body >
+  <div class="background-image"></div>
+    <div class="myDiv"><a href="/"><h1 style="color:white; text-align:center;">WELCOME TO MOVIE RECCOMENDATION SYSTEM</h1> </a></div>
+     <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>

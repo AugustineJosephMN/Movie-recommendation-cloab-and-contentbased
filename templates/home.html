@@ -1,0 +1,68 @@
+{% block content %}
+<style>
+    .background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-image: url({{ url_for ('static', filename = 'images/movie.jpg') }});
+  width: 1920px;
+  height: 1080px;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+.myDiv1 {
+  position : absolute;
+  top: 45%;
+  left: 35%;
+  z-index: 999;
+  align-items: center;
+  background-color: grey;
+	color: black;
+	width: 200px;
+	height: 35px;
+  text-align: center;
+}
+.myDiv2 {
+  position : absolute;
+  top: 45%;
+  left: 50%;
+  z-index: 999;
+  align-items: center;
+background-color: grey;
+	color: black;
+	width: 200px;
+	height: 35px;
+  text-align: center;
+}
+</style>
+
+<body>
+ <div class="background-image"></div>
+
+  <h1 style="color:white; position : absolute;
+  top: 25%;
+  left: 25%;
+  z-index: 999;
+  align-items: center;">WELCOME TO MOVIE RECOMMENDATION SYSTEM </h1>
+  <H2 style="color:white;
+   position : absolute;
+  top:35%;
+  left: 30%;
+  z-index: 999;
+  align-items: center;">SELECT THE TYPE OF RECOMMENDATION YOU PREFER.</H2>
+
+  <form action="/colab">
+      <input type="submit" name="reccomd" class="myDiv1" value="Collaborative Filtering">
+  </form>
+   <form action="/content">
+     <input type="submit" name="reccomd" class="myDiv2" value="Content Based Filtering">
+
+   </form>
+
+</body>
+{% endblock %}

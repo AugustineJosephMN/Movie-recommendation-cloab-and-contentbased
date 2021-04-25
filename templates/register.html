@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.myDiv2{
+ position: fixed;
+  z-index: 1;
+   top: 10%;
+  left: 20%;
+}
+</style>
+
+<div class="myDiv2">
+{% if session['logged_in'] %}
+<p>Oh no Dont show page</p>
+  </div>
+{% else %}
+  <div class="myDiv2">
+
+<h2>Register</h2>
+<form action="/register/" method="POST">
+  <input type="username" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="SUBMIT">
+</form>
+  {% endif %}
+  </div>
+
+{% endblock %}

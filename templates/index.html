@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+<style>
+.myDiv1 {
+  position : absolute;
+  top: 1%;
+  left: 85%;
+  z-index: 999;
+  align-items: center;
+  background-color: red;
+	color: white;
+	width: 70px;
+	height: 30px;
+  text-align: center;
+}
+.myDiv2{
+  position : absolute;
+  top: 1%;
+  left: 90%;
+  z-index: 999;
+  align-items: center;
+  background-color: green;
+	color: white;
+	width: 70px;
+	height: 30px;
+  text-align: center;
+}
+.myDiv3{
+  position : absolute;
+  top: 0%;
+  left: 47%;
+  z-index: 999;
+  align-items: center;
+  text-align: center;
+}
+.myDiv4 {
+  position : absolute;
+  top: 1%;
+  left: 85%;
+  z-index: 999;
+  align-items: center;
+	color: white;
+	width: 70px;
+	height: 30px;
+  text-align: center;
+}
+</style>
+</head>
+
+{% if session['logged_in'] %}
+
+<div class="myDiv4">
+	<h3>{{data}}</h3>
+	<a href="/logout"><input type="button" value="Logout"> </a> <br> <br>
+</div>
+
+{% else %}
+
+<div class="myDiv3">
+<h3 style="color:red; text-align:center;">YOU ARE NOT LOGGED-IN PLEASE LOG-IN/REGISTER! </h3>
+</div>
+
+<a href="/login"><input type="button" class="myDiv1" value="Login"></a>
+
+
+<a href="/register"><input type="submit" class="myDiv2" value="Register"></a>
+\
+
+{% endif %}
+
+{% endblock %}
