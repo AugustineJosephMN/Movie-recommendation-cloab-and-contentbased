@@ -20,11 +20,8 @@
   top: 20%;
   left: 10%;
   z-index: 999;
-  align-items: center;
    background-color: grey;
 	color: black;
-	width: 400px;
-	height: 300px;
 }
 </style>
  <div class="background-image"></div>
@@ -43,7 +40,7 @@
     <div class="myDiv1">
     <ul class="list-group list-group-flush">
       {% for m in r %}
-        <li class="list-group-item"><strong>{{m|capitalize}}</strong></li>
+        <li class="list-group-item"><strong><h2>{{m|capitalize}}</h2></strong></li>
       {% endfor %}
     </ul>
     </div>
