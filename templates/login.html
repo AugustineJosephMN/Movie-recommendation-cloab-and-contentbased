@@ -10,12 +10,14 @@
 
 </style>
 
-<div class="myDiv1">
+
 {% if session['logged_in'] %}
 
 
-<p>You're logged in already!</p>
+<h1 style="color:red;position : absolute;top: 1%;left: 25%;z-index: 999;align-items: center;">
+  You're logged in already Please go back and logout!</h1>
 {% else %}
+<div class="myDiv1">
 <h2>Login</h2>
 <form action="/login" method="POST">
   <input type="username" name="username" placeholder="Username">

@@ -1,23 +1,52 @@
 {% block content %}
-
+<style>
+    .background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-image: url({{ url_for ('static', filename = 'images/movie.jpg') }});
+  width: 1920px;
+  height: 1080px;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(3px);
+}
+.myDiv1 {
+  position : absolute;
+  top: 20%;
+  left: 10%;
+  z-index: 999;
+  align-items: center;
+   background-color: grey;
+	color: black;
+	width: 400px;
+	height: 300px;
+}
+</style>
+ <div class="background-image"></div>
   {% if t=='s' %}
-  <div class="shadow p-3 mb-5 bg-white rounded">
+  <div >
     <h3 style="color:rgb(0, 102, 255)">Sorry! This movie is not in our database.</h3>
     <h3 style="color:rgb(0, 102, 255)">Please check if you spelled it correct.</h3>
     <h3 style="color:rgb(0, 102, 255)">Or try with another movie.</h3>
   </div>
 
   {% else %}
-  <div class="shadow p-3 mb-5 bg-white rounded">
-    <h1 style="color:rgb(0, 102, 255)">"{{movie}}" is a great choice.</h1>
-    <h3 style="color:rgb(0, 102, 255)">Similar Recommendations are:</h3>
-  </div>
-
+    <h1 style="color:white; position:absolute; top:3%; left:10%; z-index:999;align-items: center;">
+      "{{movie}}" is a great choice.</h1>
+    <h2 style="color:white; position:absolute; top:10%; left:10%; z-index:999;align-items: center;">
+      Similar Recommendations are:</h2>
+    <div class="myDiv1">
     <ul class="list-group list-group-flush">
       {% for m in r %}
-        <li class="list-group-item" style="color:rgb(0, 179, 0)"><strong>{{m|capitalize}}</strong></li>
+        <li class="list-group-item"><strong>{{m|capitalize}}</strong></li>
       {% endfor %}
     </ul>
+    </div>
   {% endif %}
 
 {% endblock %}
