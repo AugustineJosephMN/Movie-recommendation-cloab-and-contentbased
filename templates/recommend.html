@@ -23,13 +23,24 @@
    background-color: grey;
 	color: black;
 }
+.myDiv2 {
+  position : absolute;
+  top: 20%;
+  left: 10%;
+  z-index: 999;
+   background-color: grey;
+	color: black;
+}
 </style>
  <div class="background-image"></div>
   {% if t=='s' %}
   <div >
-    <h3 style="color:rgb(0, 102, 255)">Sorry! This movie is not in our database.</h3>
-    <h3 style="color:rgb(0, 102, 255)">Please check if you spelled it correct.</h3>
-    <h3 style="color:rgb(0, 102, 255)">Or try with another movie.</h3>
+    <h2 style="color:rgb(0, 102, 255);position : absolute;top: 10%;left: 30%;z-index: 999; background-color: black;">
+        Sorry! This movie is not in our database.</h2>
+    <h2 style="color:rgb(0, 102, 255);position : absolute;top: 15%;left: 30%;z-index: 999; background-color: black;">
+        Please check if you spelled it correct.</h2>
+    <h2 style="color:rgb(0, 102, 255);position : absolute;top: 20%;left: 30%;z-index: 999; background-color: black;">
+        Or try with another movie.</h2>
   </div>
 
   {% else %}
